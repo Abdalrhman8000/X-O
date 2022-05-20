@@ -1,0 +1,11 @@
+{
+  "name": "x-o",
+  "version": "1.0.0",
+  "description": "''\u001b[X-O Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdalrhman",
+  "license": "ISC"
+}
