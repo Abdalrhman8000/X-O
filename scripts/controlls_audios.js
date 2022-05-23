@@ -36,4 +36,6 @@ class Controlls{
 }
 
 const controlls = new Controlls();
-controlls.Conroller();
+window.onload = ()=>{
+ controlls.MainSound();
+}
