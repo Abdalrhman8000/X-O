@@ -11,11 +11,6 @@ let scoreX = 0;
 let scoreO = 0;
 
 
-window.onload = ()=>{
-   controlls.MainSound();
-}
-
-
 Array.from(elements).forEach((ele,index) =>{
     ele.addEventListener('click',(e) => {
         const row = parseInt(ele.getAttribute('row'));
@@ -32,8 +27,6 @@ Array.from(elements).forEach((ele,index) =>{
         }
     });
 })    
-
-
 
 function Player(row,column,e){
     
@@ -92,7 +85,6 @@ function Player(row,column,e){
         }
 
 }
-
 
 function End(winner){
   statement = false;

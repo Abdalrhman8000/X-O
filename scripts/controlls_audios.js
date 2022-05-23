@@ -7,10 +7,7 @@ class Controlls{
         this.element = document.querySelectorAll('.card');
     }
     MainSound(){ 
-        this.audio_1.setAttribute('src','./Audios/main.wav');
-        if(this.audio_1.getAttribute('src') !==''){
-            this.audio_1.play();
-        }
+        this.audio_1.play();
     }
     Sounder(ele){
         switch (ele.target.innerText){
