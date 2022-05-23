@@ -17,13 +17,18 @@ Array.from(elements).forEach((ele,index) =>{
         const column = parseInt(ele.getAttribute('column'));
 
         if(statement){
-            stateText ? e.target.innerText = 'X':e.target.innerText ='O';
-            stateText = !stateText;
-            Player(row,column,e);
-            Test();
+            if(e.target.innerText == ''){
+                stateText ? e.target.innerText = 'X':e.target.innerText ='O';
+                stateText = !stateText;
+                Player(row,column,e);
+                Test();
+                controlls.Sounder(e);
+            }
         }
     });
 })    
+
+
 
 function Player(row,column,e){
     
@@ -94,30 +99,30 @@ function End(winner){
         statement = true;
        },1000)
        if(winner == 'X'){
-            scores[0].innerHTML =`X : ${++scoreX}`
+            scores[0].innerHTML =`X : ${++scoreX}`;
         }else if(winner == 'O'){
-            scores[1].innerHTML =`O : ${++scoreO}`
+            scores[1].innerHTML =`O : ${++scoreO}`;
         }
         document.querySelector('.winner').innerText = `Player ${winner} Won`;
-   }
+        if(scoreO == input.value && rows[0].length > 0 || scoreX == input.value && rows[0].length > 0){
+            setTimeout(() => {
+                ender.classList.add("active");
+            },1000)
+            controlls.EndSound();
+        }
+    }
     rows = [[],[],[]];
     columns = [[],[],[]];
     crossRow = [];
 }
 
 function Test(e){
-    if(scoreO == input.value || scoreX == input.value){
-        setTimeout(() => {
-            ender.classList.add("active");
-        },1000)
-    }
-
     if(e){
         if(e.target.value > parseInt(e.target.getAttribute('max'))){
             e.target.value ='';
         }
         if(e.target.value < parseInt(e.target.getAttribute('min'))){
-            e.target.value = e.target.getAttribute('min');
+            e.target.value = '';
         }
     }
 }
@@ -128,6 +133,6 @@ document.querySelector('.tryer').addEventListener("click",() =>{
     ender.classList.remove("active");
     scores[0].innerHTML =`X : ${0}`;
     scores[1].innerHTML =`O : ${0}`;
+    controlls.MainSound();
 })
-
 input.addEventListener('input',Test,false);

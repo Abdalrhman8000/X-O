@@ -4,8 +4,20 @@
   "description": "''\u001b[X-O Game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve":"lite-server"
   },
   "author": "Abdalrhman",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdalrhman8000/X-O.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdalrhman8000/X-O/issues"
+  },
+  "homepage": "https://github.com/Abdalrhman8000/X-O#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
