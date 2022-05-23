@@ -23,6 +23,7 @@ Array.from(elements).forEach((ele,index) =>{
                 Player(row,column,e);
                 Test();
                 controlls.Sounder(e);
+                controlls.MainSound();
             }
         }
     });
