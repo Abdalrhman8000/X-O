@@ -11,6 +11,11 @@ let scoreX = 0;
 let scoreO = 0;
 
 
+window.onload = ()=>{
+   controlls.MainSound();
+}
+
+
 Array.from(elements).forEach((ele,index) =>{
     ele.addEventListener('click',(e) => {
         const row = parseInt(ele.getAttribute('row'));
@@ -23,7 +28,6 @@ Array.from(elements).forEach((ele,index) =>{
                 Player(row,column,e);
                 Test();
                 controlls.Sounder(e);
-                controlls.MainSound();
             }
         }
     });
